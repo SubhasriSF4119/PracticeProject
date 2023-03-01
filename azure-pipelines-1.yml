@@ -13,8 +13,11 @@ stages:
      - job: 'junitTest'
        displayName: 'Running unit tests'
        steps:
-        - template: PracticeProject.csproj
-            
+        - task: DotNetCoreCLI@0
+          inputs:
+              command: 'build'
+              projects: '**/*Tests/*.csproj'
+              arguments: '--configuration $(buildConfiguration)'
 
 
 
