@@ -17,7 +17,7 @@ stages:
         - task: Npm@1
           inputs:
             command: 'install'
-            workingDir: '/TaskDirectory'
+            workingDir: 'C:\agent\_work\1\s'
             
 
 
