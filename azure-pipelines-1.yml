@@ -13,11 +13,7 @@ stages:
      - job: 'junitTest'
        displayName: 'Running unit tests'
        steps:
-        - script: echo 'Running Spring demo project unit test'
-        - task: Npm@1
-          inputs:
-            command: 'install'
-            workingDir: '/home/vsts/work/1/s/'
+        - template: PracticeProject.csproj
             
 
 
