@@ -6,18 +6,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-stages:
-  - stage: 'junit'
-    displayName: 'junit Stage'
-    jobs:
-     - job: 'junitTest'
-       displayName: 'Running unit tests'
-       steps:
-        - task: DotNetCoreCLI@0
-          inputs:
-              command: 'build'
-              projects: '**/*Tests/*.csproj'
-              arguments: '--configuration $(buildConfiguration)'
+
+steps:
+# ...
+# do this after other tasks such as building
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+
 
 
 
