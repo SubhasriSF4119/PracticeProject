@@ -23,22 +23,7 @@ steps:
     feedRestore: 'projectName/feedName'
     projects: '**/*.csproj'
     includeNuGetOrg: true
-- task: DotNetCoreCLI@2
-  displayName: Build
-  inputs:
-    projects: 'sampleTest.API/*.csproj'
-    arguments: '--configuration $(BuildConfiguration)'
-- task: DotNetCoreCLI@2
-  displayName: Publish
-  inputs:
-    command: publish
-    publishWebProjects: false
-    projects: '**/*.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+
 
 
 
