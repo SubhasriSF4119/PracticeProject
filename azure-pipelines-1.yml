@@ -5,10 +5,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 steps:
-- task: DotNetCoreInstaller@0
-  displayName: 'Use .NET Core sdk 0.214.0'
+- task: DotNetCoreInstaller@1
   inputs:
-    version: '0.214.0'
+    packageType: 'sdk' 
+    version: '2.2.x'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: test
