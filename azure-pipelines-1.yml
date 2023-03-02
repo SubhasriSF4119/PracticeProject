@@ -18,7 +18,7 @@ steps:
   inputs:
     command: restore
 
-    projects: '**/Api*.csproj'
+    projects: '**/Test*.csproj'
 
 
 #Your build pipeline references an undefined variable named ‘Parameters.projects’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
