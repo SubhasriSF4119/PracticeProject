@@ -21,14 +21,8 @@ steps:
     version: '2.2.x'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish'
   inputs:
-    command: 'publish'
-    publishWebProjects: false
-    projects: '**/*.csproj'
-    arguments: '-o $(Build.ArtifactStagingDirectory)/Output'
-    zipAfterPublish: true
-    modifyOutputPath: true
+    command: 'test'
 
 
   
