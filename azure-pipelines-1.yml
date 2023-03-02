@@ -21,8 +21,13 @@ steps:
     version: '2.2.x'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
   inputs:
-    command: 'test'
+    command: 'restore'
+    feedsToUse: 'select'
+    feedRestore: 'projectName/feedName'
+    projects: '**/*.csproj'
+    includeNuGetOrg: true
 
 
   
