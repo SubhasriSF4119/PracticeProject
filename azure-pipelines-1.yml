@@ -15,7 +15,10 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
-
+- task: DotNetCoreInstaller@1
+  inputs:
+    packageType: 'sdk' 
+    version: '5.x'
 
 
 
