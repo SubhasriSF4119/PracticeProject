@@ -4,6 +4,9 @@ trigger:
 - Master
 pool:
   vmImage: ubuntu-latest
+
+variables:
+  buildConfiguration: 'build'
 steps:
 - task: DotNetCoreInstaller@1
   inputs:
