@@ -3,7 +3,7 @@
 trigger:
 - Master
 pool:
-  vmImage: ubuntu-latest
+  name: Default
 
 variables:
   buildConfiguration: 'Debug'
@@ -19,18 +19,18 @@ steps:
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet restore'
+  displayName: dotnet restore
   inputs:
     command: 'restore'
     feedsToUse: 'select'
     feedRestore: 'projectName/feedName'
-    projects: '**/*.csproj'
+    projects: "**/*.csproj"
     includeNuGetOrg: true
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     command: build
-    projects: '**/*.csproj'
+    projects: "**/*.csproj"
     arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
@@ -38,7 +38,7 @@ steps:
   inputs:
     command: publish
     publishWebProjects: false
-    projects: '**/*.csproj'
+    projects: "**/*.csproj"
     arguments: '--configuration $(buildConfiguration) --output $(build.artifactstagingdirectory)'
 
 - task: PublishBuildArtifacts@1
