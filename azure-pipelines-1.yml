@@ -6,7 +6,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  buildConfiguration: 'build'
+  buildConfiguration: 'Release'
 steps:
 - task: DotNetCoreInstaller@1
   inputs:
