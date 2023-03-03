@@ -30,7 +30,7 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: '**/*.csproj'
+    projects: 'Net7Test/Net7Test/Net7Test.csproj'
     arguments: '--configuration $(buildConfiguration)'
 
 
